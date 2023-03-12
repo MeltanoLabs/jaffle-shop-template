@@ -13,3 +13,9 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - run: dbt deps
       - run: dbt build
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: cd reports && npm install && npm run build
+      # TODO: Retest after: https://github.com/evidence-dev/evidence/issues/682
+      #- run: cd reports && npm install && npm run build:strict
