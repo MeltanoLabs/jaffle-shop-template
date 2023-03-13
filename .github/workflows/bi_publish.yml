@@ -4,9 +4,7 @@ name: Deploy BI to GitHub Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    # TODO: Revert to main before merging
-    # branches: ["main"]
-    branches: ["feat-github-pages"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -43,11 +41,6 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: 'reports/build'
-      # - name: Upload artifact
-      #   uses: actions/upload-artifact@v1
-      #   with:
-      #     path: 'reports/jaffle_shop.dev-duckdb'
-      #     name: ci-build.duckdb
 
   deploy:
     needs: build
