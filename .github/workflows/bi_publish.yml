@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy BI to GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -43,10 +43,11 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: 'reports/build'
-      - name: Upload artifact
-        uses: actions/upload-artifact@v1
-        with:
-          path: 'reports/jaffle_shop.dev-duckdb'
+      # - name: Upload artifact
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     path: 'reports/jaffle_shop.dev-duckdb'
+      #     name: ci-build.duckdb
 
   deploy:
     needs: build
