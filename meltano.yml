@@ -73,6 +73,12 @@ plugins:
     config:
       years: 1
       stream_name_prefix: ${JAFFLE_RAW_SCHEMA}-raw_
+  - name: tap-exchangeratehost
+    variant: anelendata
+    pip_url: git+https://github.com/anelendata/tap-exchangeratehost.git
+    config:
+      start_date: '2020-01-01'
+      base: USD
   loaders:
   - name: target-duckdb
     variant: jwills

@@ -1,0 +1,34 @@
+{
+  "plugin_type": "extractors",
+  "name": "tap-exchangeratehost",
+  "namespace": "tap_exchangeratehost",
+  "variant": "anelendata",
+  "label": "exchangerate.host",
+  "docs": "https://hub.meltano.com/extractors/tap-exchangeratehost--anelendata",
+  "repo": "https://github.com/anelendata/tap-exchangeratehost",
+  "pip_url": "git+https://github.com/anelendata/tap-exchangeratehost.git",
+  "description": "Exchange Rate API",
+  "logo_url": "https://hub.meltano.com/assets/logos/extractors/exchangeratehost.png",
+  "capabilities": [
+    "state"
+  ],
+  "settings": [
+    {
+      "name": "start_date",
+      "kind": "date_iso8601",
+      "label": "Start Date",
+      "description": "Determines how much historical data will be extracted. Please be aware that the larger the time period and amount of data, the longer the initial extraction can be expected to take."
+    },
+    {
+      "name": "end_date",
+      "kind": "date_iso8601",
+      "label": "End Date",
+      "description": "The end date for when the sync should stop pulling data."
+    },
+    {
+      "name": "base",
+      "label": "Base",
+      "description": "Changing base currency. Enter the three-letter currency code of your preferred base currency. For example - base=USD. (Default EUR)"
+    }
+  ]
+}
